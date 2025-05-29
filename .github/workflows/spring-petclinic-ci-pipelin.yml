@@ -1,7 +1,4 @@
-# This workflow will build a Java project with Maven, and cache/restore any dependencies to improve the workflow execution time
-# For more information see: https://docs.github.com/en/actions/use-cases-and-examples/building-and-testing/building-and-testing-java-with-maven
-
-name: Java CI with Maven
+name: Spring Petclinic CI Pipeline
 
 on:
   push:
@@ -25,5 +22,7 @@ jobs:
           java-version: ${{matrix.java}}
           distribution: 'adopt'
           cache: maven
-      - name: Build with Maven Wrapper
-        run: ./mvnw -B verify
+      - name: Execute tests with maven wrapper
+        run: ./mvnw test
+      - name: Build with maven wrapper
+        run: ./mvnw package
