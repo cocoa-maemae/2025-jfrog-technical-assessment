@@ -26,3 +26,5 @@ jobs:
         run: ./mvnw test
       - name: Build with maven wrapper
         run: ./mvnw package
+      - name: Build a Docker image
+        run: docker build -t spring-petclinic:latest .
