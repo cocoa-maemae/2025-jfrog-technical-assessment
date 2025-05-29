@@ -4,5 +4,5 @@ FROM openjdk:17-jdk-slim
 RUN mkdir /usr/local/spring-petclinic
 COPY target/* /usr/local/spring-petclinic/
 
-# execute applicRUN tion
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+# execute application
+CMD ["java", "-jar", "/usr/local/spring-petclinic/spring-petclinic-3.4.0-SNAPSHOT.jar"]
