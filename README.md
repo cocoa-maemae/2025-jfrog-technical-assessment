@@ -28,10 +28,10 @@ In this case, the built docker image is stored in JFrog Artifactory. All you nee
 echo $JFROG_TOKEN | docker login -u $JFROG_USERID trialvd37q6.jfrog.io --password-stdin
 
 # pull the docker container image stored in JFrog Artifactory
-docker pull trialvd37q6.jfrog.io/jfrog-assessment-docker/spring-petclinic:latest
+docker pull ${JFROG_DOMAIN}/${JFROG_DOCKER_REPO}/spring-petclinic:latest
 
 # run docker container
-docker run --name spring-petclinic -p 8080:8080 -d trialvd37q6.jfrog.io/jfrog-assessment-docker/spring-petclinic:latest
+docker run --name spring-petclinic -p 8080:8080 -d ${JFROG_DOMAIN}/${JFROG_DOCKER_REPO}/spring-petclinic:latest
 
 ```
 After running the docker container successfully, access [http://localhost:8080/](http://localhost:8080/) The same UI as above is displayed.
