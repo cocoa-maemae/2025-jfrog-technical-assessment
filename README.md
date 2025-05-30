@@ -32,6 +32,7 @@ docker pull trialvd37q6.jfrog.io/jfrog-assessment-docker/spring-petclinic:latest
 
 # run docker container
 docker run --name spring-petclinic -p 8080:8080 -d trialvd37q6.jfrog.io/jfrog-assessment-docker/spring-petclinic:latest
+
 ```
 After running the docker container successfully, access [http://localhost:8080/](http://localhost:8080/) The same UI as above is displayed.
 
