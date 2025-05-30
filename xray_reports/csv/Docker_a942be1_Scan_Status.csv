@@ -1,0 +1,8 @@
+Scan Type,Status,Timestamp
+overall,DONE,2025-05-30T15:14:39Z
+sca,DONE,2025-05-30T15:13:57Z
+contextual_analysis,DONE,2025-05-30T15:14:21Z
+secrets,DONE,2025-05-30T15:14:27Z
+services,DONE,2025-05-30T15:14:27Z
+applications,DONE,2025-05-30T15:14:27Z
+violations,DONE,2025-05-30T15:14:39Z
