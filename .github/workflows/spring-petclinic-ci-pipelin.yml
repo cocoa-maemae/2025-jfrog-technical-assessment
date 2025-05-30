@@ -23,17 +23,15 @@ jobs:
           java-version: ${{matrix.java}}
           distribution: 'adopt'
           cache: maven
-      - name: Execute tests with maven wrapper
-        run: ./mvnw test
       - name: Build with maven wrapper
         run: ./mvnw package
+      - name: Execute tests with maven wrapper
+        run: ./mvnw test
       - name: Build a Docker image
         run: docker build -t spring-petclinic:latest .
       - name: Login to JFrog Artifactory
         run: echo "${{ secrets.JFROG_API_TOKEN }}" | docker login ${{ secrets.JFROG_URL }}/artifactory/${{ secrets.DOCKER_REPO }} -u${{ secrets.JFROG_USERNAME }} --password-stdin
       - name: Tag Docker image for JFrog
-        #run: docker tag spring-petclinic:latest ${{ secrets.JFROG_URL }}/artifactory/${{ secrets.DOCKER_REPO }}/spring-petclinic:latest
         run: docker tag spring-petclinic:latest ${{ secrets.JFROG_DOMAIN }}/${{ secrets.DOCKER_REPO }}/spring-petclinic:latest
       - name: Push Docker image to JFrog Artifactory
-        #run: docker push ${{ secrets.JFROG_URL }}/artifactory/${{ secrets.DOCKER_REPO }}/spring-petclinic:latest
         run: docker push ${{ secrets.JFROG_DOMAIN }}/${{ secrets.DOCKER_REPO }}/spring-petclinic:latest
